@@ -7,9 +7,11 @@ function App() {
       <div className='App'>
           <h1>React</h1>
           <p>Works!</p>
-          <Person/>
+          <Person name='Zoli' age='47'/>
+          <Person name='Dommi' age='42'>My Hobbies Racing </Person>
+          <Person name='Atti' age='12'/>
       </div>
-  );
+    );
 }
 
 export default App;
