@@ -5,20 +5,30 @@ import Person from './Person/Person';
 class App extends Component {
     state = {
         persons: [
-            {name:'argsgs', age:'47'},
-            {name:'xzdgfsv', age:'42'},
-            {name:'zvddfv', age:'12'}
+            {name:'argsgs', age:47},
+            {name:'xzdgfsv', age:42},
+            {name:'zvddfv', age:12}
         ],
         otherState: 'some other value'
     }
 
     switchNameHandler = (newName) => {
-        console.log('Was clicked');
+        //console.log('Was clicked');
         this.setState( {
             persons: [
-                {name:newName, age:'147'},
-                {name:'dfgs', age:'142'},
-                {name:'xfvbfv', age:'112'}
+                {name:newName, age:147},
+                {name:'dfgs', age:142},
+                {name:'xfvbfv', age:112}
+            ]
+        })
+    }
+
+    nameChangeHandler = (event) => {
+        this.setState( {
+            persons: [
+                {name:'dvzxv', age:147},
+                {name: event.target.value, age:142},
+                {name:'xfvbfv', age:112}
             ]
         })
     }
@@ -37,6 +47,7 @@ class App extends Component {
                   name={this.state.persons[1].name}
                   age={this.state.persons[1].age}
                   click={this.switchNameHandler.bind(this, 'Yoyya!')}
+                  changed={this.nameChangeHandler}
               >
                   My Hobbies Racing
               </Person>
